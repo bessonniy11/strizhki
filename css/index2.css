@@ -1,0 +1,59 @@
+.about {
+
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width:100%;
+    height: 100vh;
+    animation: animate 6s ease-in-out infinite;
+    background-size: cover;
+}
+.outer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+}
+@keyframes animate {
+    0% {
+        background-image: url("../img/bg4.jpg");
+    }
+    6% {
+        background-image: url("../img/bg4.jpg");
+    }
+    24% {
+        background-image: url("../img/bg4.jpg");
+    }
+    34% {
+        background-image: url("../img/bg4.jpg");
+    }
+    34.01% {
+        background-image: url("../img/mini4.jpg");
+    }
+    54% {
+        background-image: url("../img/mini4.jpg");
+    }
+    80% {
+        background-image: url("../img/mini4.jpg");
+    }
+    100% {
+        background-image: url("../img/mini4.jpg");
+    }
+}
+
+
+
+
+.details {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%);
+}
