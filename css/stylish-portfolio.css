@@ -127,7 +127,14 @@ h6 {
     margin: 0 auto;
     justify-content: center;
 }
-
+.logo-mini-menu {
+    margin-left: 10px;
+}
+.logo-mini-menu img {
+    height: 40px;
+    width: 40px;
+    padding: 7px;
+}
 .logo img {
     height: 60px;
     width: 60px;
@@ -174,6 +181,7 @@ h6 {
     display: flex;
     align-items: center;
 }
+
 .working-time:before {
     content: "\e94e";
     font-family: 'icomoon';
@@ -201,6 +209,26 @@ h6 {
     display: flex;
     background-color: rgba(199, 125, 133, 0.76);
 }
+
+.menu-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    justify-content: space-around;
+    display: none;
+    z-index: 99;
+    background-color: rgba(199, 125, 133, 0.76);
+}
+
+.menu-header .logo-mini {
+    position: absolute;
+    left: 5%;
+}
+.menu-header-show {
+    display: flex;
+}
+
 .menu-items {
     display: flex;
     font-size: 18px;
@@ -232,30 +260,13 @@ h6 {
     background-color: #F7F2F2;
 }
 .about-container {
-    /*background-image: url("../img/strizhki/XXXL (5).jpg");*/
     background: linear-gradient(to right, rgba(247,242,242, 1), rgba(255,255,255, 1), rgba(255,255,255, 1));
-    /*min-height: calc(100vh - 157px);*/
     height: 90%;
     width: 100%;
     display: flex;
-    /*justify-content: space-between;*/
     align-items: center;
 }
-/*.about-container-bg {*/
-/*    background-color: rgba(255,255,255,0.8);*/
-/*    min-height: calc(100vh - 157px);*/
-/*    width: 100%;*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
-/*    align-items: center;*/
-/*}*/
-/*.about-strizhki_and_photo {*/
-/*    display: flex;*/
-/*}*/
-/*.about-strizhki_and_photo img {*/
-/*    width: 100%;*/
-/*    !*height: 100%;*!*/
-/*}*/
+
 .about-strizhki {
     height: 90%;
     width: 100%;
@@ -857,6 +868,7 @@ footer {
     background-color: rgba(255,255,255, 0.95);
     justify-content: center;
     align-items: center;
+    transition: all 5.8s ease 4s;
 }
 .popup2-menu {
     display: block;
@@ -892,12 +904,195 @@ footer {
 
 /*}*/
 
-
-
-
 .popup2-active {
     display: block;
 }
+
+
+/*TEAM*/
+.container-team {
+    padding: 20px 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.team-row {
+    display: flex;
+    margin: 30px auto;
+    align-items: center;
+}
+.team-img img {
+    max-height: 280px;
+    border-radius: 50%;
+    margin: 20px;
+    border: none;
+    box-shadow: 0 0 2px 0 black;
+}
+.team-description {
+    padding: 20px;
+    margin-bottom: 50px;
+}
+.team-name {
+    font-size: 22px;
+    opacity: 0;
+    transform: translate(0, 120%);
+    transition: all 0.4s ease 0s;
+}
+.team-name._active {
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+.team-name h3::after {
+    content: '';
+    padding-bottom: 25px;
+    display: block;
+    width: 20%;
+    height: 2px;
+    /*margin-top: 15px;*/
+    border-bottom: 1px solid #B04752;
+}
+.team-text{
+    font-size: 18px;
+    opacity: 0;
+    transform: translate(0, 120%);
+    transition: all 0.4s ease 0.3s;
+}
+.team-text._active {
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+/*ADDRESS*/
+.address-container {
+    padding: 20px 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.address-contacts, .working-time-contacts, .tel-contacts  {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+.address-container h2 {
+    text-align: center;
+    font-size: 30px;
+}
+.address-container h2:after {
+    content: '';
+    padding-bottom: 15px;
+    display: block;
+    margin: 0 auto;
+    width: 20%;
+    height: 2px;
+    border-bottom: 1px solid #B04752;
+}
+.contacts-last-page {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    font-size: 15px;
+    margin: 0 15px;
+}
+.address-row {
+    display: flex;
+    justify-content: space-between;
+}
+.door {
+    max-width: 50%;
+    padding: 20px;
+}
+.door h3 {
+    font-size: 25px;
+    padding: 10px;
+}
+.door p {
+    padding: 10px;
+}
+.door-img {
+    max-width: 300px;
+    padding: 10px;
+}
+.map2 {
+    padding: 20px;
+    max-width: 50%;
+    width: 380px;
+    max-height: 450px;
+}
+
+/*MAP2*/
+
+.ymap-container2 {
+    position: relative;
+    /*margin: 3em 0 2em 0;*/
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    background: url('../img/strizhki/map.jpg') #ffffff no-repeat;
+    background-position: center center;
+    background-size: cover;
+    box-shadow: 0 0 2em  0 rgba(0,0,0,.2);
+}
+/* Блок, в котором появится Яндекс.Карта */
+#map-yandex2 {
+    position: relative;
+    z-index: 7;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background-color: transparent;
+}
+.loader2 {
+    position: absolute;
+    z-index: 15;
+    top: -100%;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    color: #000000;
+    transition: opacity .7s ease;
+    opacity: 0;
+    background-color: rgba(0,0,0,.55);
+}
+
+.loader2:after,
+.loader2:before {
+    box-sizing: border-box;
+}
+.loader2.is-active {
+    top: 0;
+    opacity: 1;
+}
+.loader-default2:after {
+    position: absolute;
+    top: calc(50% - 24px);
+    left: calc(50% - 24px);
+    width: 48px;
+    height: 48px;
+    content: '';
+    animation: rotation 1s linear infinite;
+    border: solid 8px #ffffff;
+    border-left-color: transparent;
+    border-radius: 50%;
+}
+@keyframes rotation {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+@keyframes blink {
+    from {
+        opacity: .5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
 @media (min-width: 1470px) {
     .contacts {
         justify-content: space-around;
@@ -911,7 +1106,6 @@ footer {
         justify-content: space-around;
     }
 }
-
 @media (max-width: 1099px) {
     .galery-list__item img {
         max-width: 170px;
@@ -957,6 +1151,9 @@ footer {
     .logo-mini img {
         height: 40px;
         width: 40px;
+    }
+    .menu-header {
+        justify-content: space-between;
     }
     .address {
         margin-left: 40px;
@@ -1031,9 +1228,44 @@ footer {
         background: #B04752;
     }
 }
+@media (max-width: 776px) {
+    .team-img img {
+        max-height: 260px;
+    }
+    .contacts-last-page {
+        display: block;
+        text-align: center;
+    }
+    .address-container {
+        margin-bottom: 10px;
+    }
+    .address-text, .working-time-text, .tel-text {
+        margin: 0 auto;
+    }
+    .address-row {
+        text-align: center;
+        display: block;
+        justify-content: center;
+    }
+    .door {
+        padding: 10px;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    .door-img {
+        max-width: 80%;
+        max-width: 80%;
+        padding: 20px;
+        margin: 0 auto;
+    }
+    .map2 {
+        margin: 0 auto;
+        padding: 20px;
+        max-width: 90%;
+        height: 350px;
+    }
 
-
-
+}
 
 @media (max-width: 680px) {
 
@@ -1141,6 +1373,15 @@ footer {
         color: #B04752;
         background: #B04752;
     }
+    .team-img img {
+        max-height: 200px;
+    }
+    .contacts-last-page {
+        display: block;
+        justify-content: center;
+        text-align: center;
+    }
+
 
 }
 @media (max-width: 522px) {
@@ -1149,9 +1390,30 @@ footer {
     }
     .order-call__icon {
         /*width: 60px;*/
-        height: 70px;
+        /*height: 30px;*/
         padding: 10px;
         font-size: 15px;
+    }
+    .team-img img {
+        margin: 0 auto;
+    }
+    .team-row {
+        display: block;
+        justify-content: center;
+        text-align: center;
+    }
+    .team-name {
+        text-align: center;
+    }
+    .team-name h3:after {
+        width: 20%;
+        margin: 0 auto;
+    }
+    .team-description {
+        padding-bottom: 0px;
+    }
+    .team-img img {
+        max-height: 220px;
     }
 }
 
@@ -1208,6 +1470,9 @@ footer {
         margin: 0 auto;
         /*width: 100%;*/
         max-width: 200px;
+    }
+    .team-img img {
+        max-height: 180px;
     }
 
 }
