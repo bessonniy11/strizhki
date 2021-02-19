@@ -270,7 +270,8 @@ h6 {
 .about-strizhki {
     height: 90%;
     width: 100%;
-    background: url("../img/strizhki/woman.jpg") no-repeat right;
+    background: url("../img/strizhki/woman.jpg") no-repeat;
+    background-position: 95% center;
     background-size: contain;
     align-items: center;
 }
