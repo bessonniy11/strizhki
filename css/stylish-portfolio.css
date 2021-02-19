@@ -1242,7 +1242,7 @@ footer {
         margin-bottom: 10px;
     }
     .address-text, .working-time-text, .tel-text {
-        /*margin: 0 auto;*/
+        margin: 0 auto;
     }
     .address-row {
         text-align: center;
@@ -1477,4 +1477,18 @@ footer {
         max-height: 180px;
     }
 
+}
+@media (max-width: 290px) {
+    .personal_approach img {
+        width: 90%;
+        height: 90%;
+    }
+    .map2 {
+        padding: 10px;
+        max-height: 80%;
+    }
+    .map-yandex2 {
+        margin: 0 auto;
+
+    }
 }
