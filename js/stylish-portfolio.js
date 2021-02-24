@@ -125,32 +125,10 @@
 
 })(jQuery); // End of use strict
 
-// // Disable Google Maps scrolling
-// // See http://stackoverflow.com/a/25904582/1607849
-// // Disable scroll zooming and bind back the click event
-// var onMapMouseleaveHandler = function(event) {
-//   var that = $(this);
-//   that.on('click', onMapClickHandler);
-//   that.off('mouseleave', onMapMouseleaveHandler);
-//   that.find('iframe').css("pointer-events", "none");
-// }
-// var onMapClickHandler = function(event) {
-//   var that = $(this);
-//   // Disable the click handler until the user leaves the map area
-//   that.off('click', onMapClickHandler);
-//   // Enable scrolling zoom
-//   that.find('iframe').css("pointer-events", "auto");
-//   // Handle the mouse leave event
-//   that.on('mouseleave', onMapMouseleaveHandler);
-// }
-// // Enable map zooming with mouse scroll when the user clicks the map
-// $('.map').on('click', onMapClickHandler);
 
 $(document).ready(function () {
   let openMap = $('.open-map');
   let mapContainer = $('.map');
-
-
   openMap.click(function(){
     mapContainer.toggleClass('none')
     mapContainer.addClass('fadeOut')
@@ -159,7 +137,6 @@ $(document).ready(function () {
       return text === "Показать карту" ? "Скрыть карту" : "Показать карту";
     });
   });
-
 });
 
 
@@ -331,7 +308,7 @@ function init2 () {
 // Функция для определения полной загрузки карты (на самом деле проверяется загрузка тайлов)
 function waitForTilesLoad2(layer) {
   return new ymaps.vow.Promise(function (resolve, reject) {
-    var tc = getTileContainer(layer), readyAll = true;
+    var tc = getTileContainer2(layer), readyAll = true;
     tc.tiles.each(function (tile, number) {
       if (!tile.isReady()) {
         readyAll = false;
@@ -452,7 +429,29 @@ if (animItems.length > 0) {
 }
 
 
+// POPUP
 
+jQuery(document).ready(function () {
+  jQuery("form").submit(function () {
+    var form_data = jQuery(this).serialize();
+    jQuery.ajax({
+      type: "POST",
+      url: "sendform.php",
+      data: form_data,
+      success: swal({
+        title:"Спасибо за заявку!",
+        type: "success",
+        showConfirmButton: false,
+        timer: 20000
+      })
+    });
+    $('.order-call-popup').removeClass('order-call-show animate__fadeIn')
+    // $('.order-call__icon').toggleClass('order-call__icon__none animate__fadeIn')
+    // $('.order-close').addClass('order-call__icon__none animate__fadeIn')
+    $('html').removeClass('body_fix')
+    event.preventDefault();
+  });
+});
 
 
 
