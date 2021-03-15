@@ -1494,7 +1494,7 @@ footer {
         padding: 5px;
         right: 0;
         max-width: 100%;
-        min-height: 85%;
+        height: 100%;
         position: absolute;
         left: 0;
         top: 0;
