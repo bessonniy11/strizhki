@@ -446,8 +446,8 @@ jQuery(document).ready(function () {
       })
     });
     $('.order-call-popup').removeClass('order-call-show animate__fadeIn')
-    // $('.order-call__icon').toggleClass('order-call__icon__none animate__fadeIn')
-    // $('.order-close').addClass('order-call__icon__none animate__fadeIn')
+    $('.order-call__icon').removeClass('order-call__icon__none animate__fadeIn')
+    $('.order-close').toggleClass('order-call__icon__none animate__fadeIn')
     $('html').removeClass('body_fix')
     event.preventDefault();
   });
